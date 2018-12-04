@@ -42,23 +42,16 @@
                             <label for="dept" class="col-md-4 control-label">Department</label>
  
                             <div class="col-md-6">
-                                <select name="dept" class="form-control" >
-                                    <option value="computerscience">Computer Science</option>
-                                    <option value="engineering">Engineering </option>
-                                    <option value="physics">Physics</option>
-                                </select> 
-                            </div>
-                        </div>
-                        <div class="form-group{{ $errors->has('dept') ? ' has-error' : '' }}">
-                            <label for="dept" class="col-md-4 control-label">Department</label>
-                            <div class="col-md-6">
-                                <input id="dept" type="text" class="form-control" name="dept" required>
+                                <select name="dept" id="dept" class="form-control" >
+                                    <option value="" disabled selected>Choose your department</option>
+                                    <option value="1">Biology</option>
+                                    <option value="2">Chemistry</option>                               
+                                    <option value="3">Computer Science</option>
+                                    <option value="4">Engineering and Enviromental Science</option>                               
+                                    <option value="5">Mathematics</option>                               
+                                    <option value="6">Physics and Astronomy</option>
 
-                                @if ($errors->has('dept'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('dept') }}</strong>
-                                    </span>
-                                @endif
+                                </select> 
                             </div>
                         </div>
                         

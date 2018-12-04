@@ -20,7 +20,7 @@
     </head>
     <body>
         <div class="container">
-          <!-- @include('inc.messages')-->
+            @include('inc.messages')
             @yield('content')
         </div>
        

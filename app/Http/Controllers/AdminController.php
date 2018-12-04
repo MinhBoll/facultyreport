@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Department;
 use App\Report;
+use App\Book;
 use App\User;
 use App\Faculty;
 use App\Award;
@@ -34,6 +35,7 @@ class AdminController extends Controller
         $dept_id = Auth::user()->department;
         $report_count = Report::where('department',$dept_id)->count();
         $faculty_count = Faculty::where('deptId',$dept_id)->count();
+        $book_count = Book::join('faculties', 'faculties.emplid', 'books.faclId')->where('faculties.deptId', $dept_id)->count();
         
         $department = Department::select('dept_name')->where('id',$dept_id)->get();
         $academic_year = Report::distinct()->where('department',$dept_id)->get(['year']);        
@@ -96,6 +98,7 @@ class AdminController extends Controller
             'academic_year' => $academic_year,
             'report_count' => $report_count,
             'faculty_count' => $faculty_count,
+            'book_count' => $book_count,
             'department' => $department,
         ];
         
@@ -200,7 +203,7 @@ class AdminController extends Controller
         $output = "
             <div class='row' id='official-report'>
                 <div class='table-responsive'>
-                    <table class='table table-bordered'>
+                    <table class='table table-bordered' style='background-color: #fff;'>
                         <col width='auto'>
                         <col width='400'>
                         <col width='400'>

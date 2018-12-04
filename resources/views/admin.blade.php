@@ -1,22 +1,16 @@
 @extends('layouts.app')
 
+@section('title', '- '.$department[0]->dept_name)
+
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in as {{$department[0]->dept_name}} Admin
-                </div>
-            </div>
         </div>
     </div>
     
@@ -26,29 +20,14 @@
             <!-- small box -->
             <div class="panel panel-default dashboard-panel">
                 <div class="panel-body my-panel-body bg-aqua">
-                    <h3>Official</h3>
-                    <p>Report</p>
+                    <h3>Official Report</h3>
+                    <p>{{$report_count}} Reports</p>
                     <div id="icon">
                         <i class="fa fa-user"></i>
                     </div>
                 </div>
                 <div class="panel-footer my-panel-footer bg-aqua">
                     <a href="{{ url('#official-report') }}">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-xs-6">
-            <!-- small box -->
-            <div class="panel panel-default dashboard-panel">
-                <div class="panel-body my-panel-body bg-aqua">
-                    <h3>{{$report_count}}</h3>
-                    <p>Reports</p>
-                    <div id="icon">
-                        <i class="fa fa-user"></i>
-                    </div>
-                </div>
-                <div class="panel-footer my-panel-footer bg-aqua">
-                    <a href="{{ url('#') }}">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>
@@ -69,6 +48,22 @@
             </div>
         </div>
         <!-- ./col -->
+        
+        <div class="col-lg-4 col-xs-6">
+            <!-- small box -->
+            <div class="panel panel-default dashboard-panel">
+                <div class="panel-body my-panel-body bg-aqua">
+                    <h3>{{$book_count}}</h3>
+                    <p>Books</p>
+                    <div id="icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                </div>
+                <div class="panel-footer my-panel-footer bg-aqua">
+                    <a href="{{ url('#') }}">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
     
     <!-- REPORT -->
@@ -86,16 +81,12 @@
         </div>
         {!! csrf_field() !!}
     <div class="row">
-        <div class="col-md-12 report-main" data-dependent="report"></div>
+        <div class="col-md-12 report-main" data-dependent="report">
+            <button onclick='printReport("official-report")'>Print Report</button>
+        </div>
     </div>
     <div class="row">    
-        <div class="col-md-12 report-main" id="report-main">                    
-          <!--nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav-->
+        <div class="col-md-12 report-main" id="report-main">
 
         </div><!-- /.report-main -->
     </div><!-- /.row -->

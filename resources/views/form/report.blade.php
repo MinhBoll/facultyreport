@@ -66,42 +66,42 @@
             <div class="row">
                 <div class="form-group col-md-6 ">
                     <label for="title">Total # Refereed Papers </label>
-                    <input class="form-control {{ $errors->has('referedpapers') ? 'has-error' : ''}}" id="referedpapers" name="referedpapers" type="text" value="{{ old('referedpapers') }}">
+                    <input class="form-control {{ $errors->has('referedpapers') ? 'has-error' : ''}}" placeholder="0" id="referedpapers" name="referedpapers" type="text" value="{{ old('referedpapers') }}">
                     {!! $errors->first('referedpapers', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
                 <div class="form-group col-md-6 ">
                     <label for="title">Indicate # with student coauthors </label>
-                    <input class="form-control {{ $errors->has('referedpaperswstudents') ? 'has-error' : ''}}" id="referedpaperswstudents" name="referedpaperswstudents" type="text" value="{{ old('referedpaperswstudents') }}">
+                    <input class="form-control {{ $errors->has('referedpaperswstudents') ? 'has-error' : ''}}" placeholder="0" id="referedpaperswstudents" name="referedpaperswstudents" type="text" value="{{ old('referedpaperswstudents') }}">
                     {!! $errors->first('referedpaperswstudents', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 ">
                     <label for="title">Total # Non-refereed papers</label>
-                    <input class="form-control {{ $errors->has('nonreferedpapers') ? 'has-error' : ''}}" id="nonreferedpapers" name="nonreferedpapers" type="text" value="{{ old('nonreferedpapers') }}">
+                    <input class="form-control {{ $errors->has('nonreferedpapers') ? 'has-error' : ''}}" placeholder="0" id="nonreferedpapers" name="nonreferedpapers" type="text" value="{{ old('nonreferedpapers') }}">
                     {!! $errors->first('nonreferedpapers', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6 ">
                     <label for="title">Books</label>
-                    <input class="form-control {{ $errors->has('books') ? 'has-error' : ''}}" id="books" name="books" type="text" value="{{ old('books') }}">
+                    <input class="form-control {{ $errors->has('books') ? 'has-error' : ''}}" placeholder="0" id="books" name="books" type="text" value="{{ old('books') }}">
                     {!! $errors->first('books', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
                 <div class="form-group col-md-6 ">
                     <label for="title">Book Chapters</label>
-                    <input class="form-control {{ $errors->has('bookchapters') ? 'has-error' : ''}}" id="bookchapters" name="bookchapters" type="text" value="{{ old('bookchapters') }}">
+                    <input class="form-control {{ $errors->has('bookchapters') ? 'has-error' : ''}}" placeholder="0" id="bookchapters" name="bookchapters" type="text" value="{{ old('bookchapters') }}">
                     {!! $errors->first('bookchapters', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 ">
                     <label for="title">Submitted Manuscripts</label>
-                    <input class="form-control {{ $errors->has('manuscripts') ? 'has-error' : ''}}" id="manuscripts" name="manuscripts" type="text" value="{{ old('manuscripts') }}">
+                    <input class="form-control {{ $errors->has('manuscripts') ? 'has-error' : ''}}" placeholder="0" id="manuscripts" name="manuscripts" type="text" value="{{ old('manuscripts') }}">
                     {!! $errors->first('manuscripts', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
-            <div id="dynamic_employment_field">
+           <!-- <div id="dynamic_employment_field">
                 <div class="group-employment">
                     <div class="row">
                         <div class="form-group col-md-12 {{ $errors->has('booktitle.*') ? 'has-error' : '' }}">
@@ -120,7 +120,7 @@
                         <button type="button" name="add-publications" id="add-publications" class="btn btn-success">Add More Books</button>
                     </center>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
     <!--Presentations-->
@@ -130,19 +130,19 @@
             <div class="row">
                 <div class="form-group col-md-6 ">
                     <label for="title">Conference Presentations</label>
-                    <input class="form-control {{ $errors->has('conferences') ? 'has-error' : ''}}" id="conferences" name="conferences" type="text" value="{{ old('conferences') }}">
+                    <input class="form-control {{ $errors->has('conferences') ? 'has-error' : ''}}" placeholder="0" id="conferences" name="conferences" type="text" value="{{ old('conferences') }}">
                     {!! $errors->first('conferences', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
                 <div class="form-group col-md-6 ">
                     <label for="title">Indicate # with invited speaker </label>
-                    <input class="form-control {{ $errors->has('conferenceswspeakers') ? 'has-error' : ''}}" id="conferenceswspeakers" name="conferenceswspeakers" type="text" value="{{ old('conferenceswspeakers') }}">
+                    <input class="form-control {{ $errors->has('conferenceswspeakers') ? 'has-error' : ''}}" placeholder="0" id="conferenceswspeakers" name="conferenceswspeakers" type="text" value="{{ old('conferenceswspeakers') }}">
                     {!! $errors->first('conferenceswspeakers', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 ">
                     <label for="title">Students' Conference Presentations</label>
-                    <input class="form-control {{ $errors->has('studentsconferences') ? 'has-error' : ''}}" id="studentsconferences" name="studentsconferences" type="text" value="{{ old('studentsconferences') }}">
+                    <input class="form-control {{ $errors->has('studentsconferences') ? 'has-error' : ''}}" placeholder="0" id="studentsconferences" name="studentsconferences" type="text" value="{{ old('studentsconferences') }}">
                     {!! $errors->first('studentsconferences', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
@@ -194,24 +194,24 @@
             <div class="row">
                 <div class="form-group col-md-6 ">
                     <label for="title"> External Proposals Submitted </label>
-                    <input class="form-control {{ $errors->has('exfunding') ? 'has-error' : ''}}" id="exfunding" name="exfunding" type="text" value="{{ old('exfunding') }}">
+                    <input class="form-control {{ $errors->has('exfunding') ? 'has-error' : ''}}" placeholder="0" id="exfunding" name="exfunding" type="text" value="{{ old('exfunding') }}">
                     {!! $errors->first('exfunding', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
                 <div class="form-group col-md-6 ">
                     <label for="title">CUNY Proposals Submitted </label>
-                    <input class="form-control {{ $errors->has('cunyfunding') ? 'has-error' : ''}}" id="cunyfunding" name="cunyfunding" type="text" value="{{ old('cunyfunding') }}">
+                    <input class="form-control {{ $errors->has('cunyfunding') ? 'has-error' : ''}}" placeholder="0" id="cunyfunding" name="cunyfunding" type="text" value="{{ old('cunyfunding') }}">
                     {!! $errors->first('cunyfunding', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6 ">
                     <label for="title"> External New Grants awarded </label>
-                    <input class="form-control {{ $errors->has('exgrants') ? 'has-error' : ''}}" id="exgrants" name="exgrants" type="text" value="{{ old('exgrants') }}">
+                    <input class="form-control {{ $errors->has('exgrants') ? 'has-error' : ''}}" placeholder="0" id="exgrants" name="exgrants" type="text" value="{{ old('exgrants') }}">
                     {!! $errors->first('exgrants', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
                 <div class="form-group col-md-6 ">
                     <label for="title">CUNY New Grants awarded </label>
-                    <input class="form-control {{ $errors->has('cunygrants') ? 'has-error' : ''}}" id="cunygrants" name="cunygrants" type="text" value="{{ old('cunygrants') }}">
+                    <input class="form-control {{ $errors->has('cunygrants') ? 'has-error' : ''}}" placeholder="0" id="cunygrants" name="cunygrants" type="text" value="{{ old('cunygrants') }}">
                     {!! $errors->first('cunygrants', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
@@ -220,7 +220,7 @@
                     <label for="title"> External Total Amounts Awarded </label>
                     <div class="input-group">
                         <div class="input-group-addon">$</div>
-                        <input class="form-control {{ $errors->has('exawards') ? 'has-error' : ''}}" id="exawards" name="exawards" type="text" value="{{ old('exawards') }}">
+                        <input class="form-control {{ $errors->has('exawards') ? 'has-error' : ''}}" placeholder="0" id="exawards" name="exawards" type="text" value="{{ old('exawards') }}">
                         <div class="input-group-addon">.00</div>
                     </div>
                     {!! $errors->first('exawards', '<p class="danger-block text-danger">:message</p>') !!}
@@ -229,25 +229,12 @@
                     <label for="title">CUNY Total Amounts Awarded </label>
                     <div class="input-group">
                         <div class="input-group-addon">$</div>
-                        <input class="form-control {{ $errors->has('cunyawards') ? 'has-error' : ''}}" id="cunyawards" name="cunyawards" type="text" value="{{ old('cunyawards') }}">
+                        <input class="form-control {{ $errors->has('cunyawards') ? 'has-error' : ''}}" placeholder="0" id="cunyawards" name="cunyawards" type="text" value="{{ old('cunyawards') }}">
                         <div class="input-group-addon">.00</div>
                     </div>
                     {!! $errors->first('cunyawards', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
-            <!--<div id="dynamic_internship_field">
-                                    <div class="group-internship">
-                                        <div class="row">
-                                            <div class="form-group col-md-12 ">
-                                                <label for="title">Name of Internship Company</label>
-                                                <input class="form-control internshipname" placeholder="CSI" name="internshipname[]" type="text" value="">
-                                            </div>
-                                        </div>
-                                        <center>
-                                            <button type="button" name="add-internship" id="add-internship" class="btn btn-success">Add More Internship Companies</button>
-                                        </center>
-                                    </div>
-                                </div>-->
         </div>
     </div>
     <!--Honors and Awards-->
@@ -257,14 +244,14 @@
             <div class="row">
                 <div class="form-group col-md-12 ">
                     <label for="title"> Number of faculty nominated for Honors and Awards </label>
-                    <input class="form-control {{ $errors->has('nominatedfaculty') ? 'has-error' : ''}}" id="nominatedfaculty" name="nominatedfaculty" type="text" value="{{ old('nominatedfaculty') }}">
+                    <input class="form-control {{ $errors->has('nominatedfaculty') ? 'has-error' : ''}}" placeholder="0" id="nominatedfaculty" name="nominatedfaculty" type="text" value="{{ old('nominatedfaculty') }}">
                     {!! $errors->first('nominatedfaculty', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 ">
                     <label for="title"> Number of Honors and Awards recieved </label>
-                    <input class="form-control {{ $errors->has('honors') ? 'has-error' : ''}}" id="honors" name="honors" type="text" value="{{ old('honors') }}">
+                    <input class="form-control {{ $errors->has('honors') ? 'has-error' : ''}}" placeholder="0" id="honors" name="honors" type="text" value="{{ old('honors') }}">
                     {!! $errors->first('honors', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
@@ -302,36 +289,36 @@
             <div class="row">
                 <div class="form-group col-md-6 ">
                     <label for="title">PhD. students mentored </label>
-                    <input class="form-control {{ $errors->has('phdmentored') ? 'has-error' : ''}}" id="phdmentored" name="phdmentored" type="text" value="{{ old('phdmentored') }}">
+                    <input class="form-control {{ $errors->has('phdmentored') ? 'has-error' : ''}}" placeholder="0" id="phdmentored" name="phdmentored" type="text" value="{{ old('phdmentored') }}">
                     {!! $errors->first('phdmentored', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
                 <div class="form-group col-md-6 ">
                     <label for="title">MS students mentored</label>
-                    <input class="form-control {{ $errors->has('msmentored') ? 'has-error' : ''}}" id="msmentored" name="msmentored" type="text" value="{{ old('msmentored') }}">
+                    <input class="form-control {{ $errors->has('msmentored') ? 'has-error' : ''}}" placeholder="0" id="msmentored" name="msmentored" type="text" value="{{ old('msmentored') }}">
                     {!! $errors->first('msmentored', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6 ">
                     <label for="title">Undergrad students mentored</label>
-                    <input class="form-control {{ $errors->has('undergradmentored') ? 'has-error' : ''}}" id="undergradmentored"   name="undergradmentored" type="text" value="{{ old('undergradmentored') }}">
+                    <input class="form-control {{ $errors->has('undergradmentored') ? 'has-error' : ''}}" placeholder="0" id="undergradmentored"   name="undergradmentored" type="text" value="{{ old('undergradmentored') }}">
                     {!! $errors->first('undergradmentored', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
                 <div class="form-group col-md-6 ">
                     <label for="title">Postdocs supervised</label>
-                    <input class="form-control {{ $errors->has('postdocssupervised') ? 'has-error' : ''}}" id="postdocssupervised" name="postdocssupervised" type="text" value="{{ old('postdocssupervised') }}">
+                    <input class="form-control {{ $errors->has('postdocssupervised') ? 'has-error' : ''}}" placeholder="0" id="postdocssupervised" name="postdocssupervised" type="text" value="{{ old('postdocssupervised') }}">
                     {!! $errors->first('postdocssupervised', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6 ">
                     <label for="title">Defended Thesis</label>
-                    <input class="form-control {{ $errors->has('thesis') ? 'has-error' : ''}}" id="thesis" name="thesis" type="text" value="{{ old('thesis') }}">
+                    <input class="form-control {{ $errors->has('thesis') ? 'has-error' : ''}}" placeholder="0" id="thesis" name="thesis" type="text" value="{{ old('thesis') }}">
                     {!! $errors->first('thesis', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
                 <div class="form-group col-md-6 ">
                     <label for="title">Student Awards</label>
-                    <input class="form-control {{ $errors->has('studentawards') ? 'has-error' : ''}}" id="studentawards" name="studentawards" type="text" value="{{ old('studentawards') }}">
+                    <input class="form-control {{ $errors->has('studentawards') ? 'has-error' : ''}}" placeholder="0" id="studentawards" name="studentawards" type="text" value="{{ old('studentawards') }}">
                     {!! $errors->first('studentawards', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
@@ -351,21 +338,21 @@
             <div class="row">
                 <div class="form-group col-md-12 ">
                     <label for="title">BS Degrees awarded </label>
-                    <input class="form-control {{ $errors->has('bsdegrees') ? 'has-error' : ''}}" id="bsdegrees" name="bsdegrees" type="text" value="{{ old('bsdegrees') }}">
+                    <input class="form-control {{ $errors->has('bsdegrees') ? 'has-error' : ''}}" placeholder="0" id="bsdegrees" name="bsdegrees" type="text" value="{{ old('bsdegrees') }}">
                     {!! $errors->first('bsdegrees', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 ">
                     <label for="title">MS Degrees awarded</label>
-                    <input class="form-control {{ $errors->has('msdegrees') ? 'has-error' : ''}}" id="msdegrees" name="msdegrees" type="text" value="{{ old('msdegrees') }}">
+                    <input class="form-control {{ $errors->has('msdegrees') ? 'has-error' : ''}}" placeholder="0" id="msdegrees" name="msdegrees" type="text" value="{{ old('msdegrees') }}">
                     {!! $errors->first('msdegrees', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 ">
                     <label for="title">PhD Degrees awarded</label>
-                    <input class="form-control {{ $errors->has('phddegrees') ? 'has-error' : ''}}" id="phddegrees" name="phddegrees" type="text" value="{{ old('phddegrees') }}">
+                    <input class="form-control {{ $errors->has('phddegrees') ? 'has-error' : ''}}" placeholder="0" id="phddegrees" name="phddegrees" type="text" value="{{ old('phddegrees') }}">
                     {!! $errors->first('phddegrees', '<p class="danger-block text-danger">:message</p>') !!}
                 </div>
             </div>

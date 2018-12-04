@@ -45,78 +45,48 @@ class ReportsController extends Controller
             'profname' => 'required',
              'facultyid' => 'required|numeric',
             'dept' => 'required',
-             'year' => 'required',
-            'referedpapers' => 'required|numeric',
-            'referedpaperswstudents' => 'required|numeric',
-            'nonreferedpapers' => 'required|numeric',
-            'books' => 'required|numeric',
-            'bookchapters' => 'required|numeric',
-            'manuscripts' => 'required|numeric',
-             'booktitle' => 'nullable',
-             'abstract' => 'nullable',
-            'conferences' => 'required|numeric',
-            'conferenceswspeakers' => 'required|numeric',
-            'studentsconferences' => 'required|numeric',
-            'exfunding' => 'required|numeric',
-            'cunyfunding' => 'required|numeric',
-            'exgrants' => 'required|numeric',
-            'cunygrants' => 'required|numeric',
-            'exawards' => 'required|numeric',
-            'cunyawards' => 'required|numeric',
-            'nominatedfaculty' => 'required|numeric',
-            'honors' => 'required|numeric',
-            'phdmentored' => 'required|numeric',
-            'msmentored' => 'required|numeric',
-            'undergradmentored' => 'required|numeric',
-            'postdocssupervised' => 'required|numeric',
-            'thesis' => 'required|numeric',
-            'studentawards' => 'required|numeric',
-            'awards' => 'required',
-            'bsdegrees' => 'required|numeric',
-            'msdegrees' => 'required|numeric',
-            'phddegrees' => 'required|numeric',
-            
+             'year' => 'required',            
         ]);
         //$empty = is_empty($abstract);
-            
-        
         //report
+        
+        $facultyId = uniqid('csi');
+        
         $report = new Report();
-        $report->faculty_id = $request->input('facultyid');
+        $report->faculty_id = $facultyId;
         $report->department = $request->input('dept');
-        $report->total_prefered_papers = $request->input('referedpapers');
-        $report->total_prefered_papers_wstudents = $request->input('referedpaperswstudents');
-        $report->total_nonprefered_papers = $request->input('nonreferedpapers');
-        $report->books = $request->input('books');
-        $report->book_chapters = $request->input('bookchapters');
-        $report->manuscripts = $request->input('manuscripts');
-        $report->conferences = $request->input('conferences');
-        $report->conferences_wspeaker = $request->input('conferenceswspeakers');
-        $report->student_conferences = $request->input('studentsconferences');
-        $report->external_proposals = $request->input('exfunding');
-        $report->cuny_proposals = $request->input('cunyfunding');
-        $report->external_grant_awarded = $request->input('exgrants');
-        $report->cuny_grant_awarded = $request->input('cunygrants');
-        $report->extotal_amount_awarded = $request->input('exawards');
-        $report->cunytotal_amount_awarded = $request->input('cunyawards');
-        $report->nbr_faculty_nominated = $request->input('nominatedfaculty');
-        $report->honors_awards = $request->input('honors');
-        $report->phd_students_mentored = $request->input('phdmentored');
-        $report->ms_students_mentored = $request->input('msmentored');
-        $report->undergrad_students_mentored = $request->input('undergradmentored');
-        $report->postdocs_supervised = $request->input('postdocssupervised');
-        $report->defense = $request->input('thesis');
-        $report->student_awards = $request->input('studentawards');
-        $report->awards = $request->input('awards');
-        $report->bs_awarded = $request->input('bsdegrees');
-        $report->ms_awarded = $request->input('msdegrees');
-        $report->phd_awarded = $request->input('phddegrees');
-        $report->year = $request->input('year');
+        $report->total_prefered_papers = $request->input('referedpapers') ?: 0;
+        $report->total_prefered_papers_wstudents = $request->input('referedpaperswstudents') ?: 0;
+        $report->total_nonprefered_papers = $request->input('nonreferedpapers') ?: 0;
+        $report->books = $request->input('books') ?: 0;
+        $report->book_chapters = $request->input('bookchapters') ?: 0;
+        $report->manuscripts = $request->input('manuscripts') ?: 0;
+        $report->conferences = $request->input('conferences') ?: 0;
+        $report->conferences_wspeaker = $request->input('conferenceswspeakers') ?: 0;
+        $report->student_conferences = $request->input('studentsconferences') ?: 0;
+        $report->external_proposals = $request->input('exfunding') ?: 0;
+        $report->cuny_proposals = $request->input('cunyfunding') ?: 0;
+        $report->external_grant_awarded = $request->input('exgrants') ?: 0;
+        $report->cuny_grant_awarded = $request->input('cunygrants') ?: 0;
+        $report->extotal_amount_awarded = $request->input('exawards') ?: 0;
+        $report->cunytotal_amount_awarded = $request->input('cunyawards') ?: 0;
+        $report->nbr_faculty_nominated = $request->input('nominatedfaculty') ?: 0;
+        $report->honors_awards = $request->input('honors') ?: 0;
+        $report->phd_students_mentored = $request->input('phdmentored') ?: 0;
+        $report->ms_students_mentored = $request->input('msmentored') ?: 0;
+        $report->undergrad_students_mentored = $request->input('undergradmentored') ?: 0;
+        $report->postdocs_supervised = $request->input('postdocssupervised') ?: 0;
+        $report->defense = $request->input('thesis') ?: 0;
+        $report->student_awards = $request->input('studentawards') ?: 0;
+        $report->bs_awarded = $request->input('bsdegrees') ?: 0;
+        $report->ms_awarded = $request->input('msdegrees') ?: 0;
+        $report->phd_awarded = $request->input('phddegrees') ?: 0;
+        $report->year = $request->input('year') ?: 0;
         
         $report->save();
         
         
-        if($request->input('books') > 0 && $request->input('booktitle')[0] != ''){
+        /*if($request->input('books') > 0 && $request->input('booktitle')[0] != ''){
             $book = new Book();
             $books = $request->input('booktitle');
             $abstracts = $request->input('abstract');
@@ -126,25 +96,34 @@ class ReportsController extends Controller
                 $book->abstracts = $abstracts[$key];
                 $book->save();
             }
-        }
+        }*/
         
         //$book->faclId = $request->input('')
+        /*if($request->input('studentawards')>0 && $request->input('awards') != ''){
+            $awardArr = array_map('trim', explode(",",$request->input('awards')));
+            $award = new Award();
+            foreach($awardArr as $award){
+                $award->award_name = $award;
+                $award->faclId = $request->input('facultyid');
+                $award->save();
+            }
+        }*/
         if($request->input('studentawards')>0 && $request->input('awards') != ''){
             $award = new Award();
             $award->award_name = $request->input('awards');
-            $award->faclID = $request->input('facultyid');
+            $award->faclId = $facultyId;;
             $award->save();
         }
-        
-        $faculty_count = Faculty::where('emplid', $request->input('facultyid'))->count();
+        $faculty_name = strtolower($request->input('profname'));
+        $faculty_count = Faculty::where([['emplid', $facultyId], ['name', $faculty_name]])->count();
             if($faculty_count < 1){
                 $faculty = new Faculty();
-                $faculty->emplid = $request->input('facultyid');
+                $faculty->emplid = $facultyId;;
                 $faculty->name = $request->input('profname');
                 $faculty->deptId = $request->input('dept');
                 $faculty->save();
             }
-        
+        return redirect('/report')->with('success', 'You have submitted the report successfully');
     }
 
     /**
